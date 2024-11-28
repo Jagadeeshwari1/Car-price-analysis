@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
 
-# Attempt to import plotting libraries
+# Attempt to import matplotlib and seaborn
 try:
     import matplotlib.pyplot as plt
     import seaborn as sns
 except ImportError as e:
-    st.error(f"An import error occurred: {e}")
+    st.error(f"An import error occurred: {e}. Please ensure the required libraries are installed by running:")
+    st.code("pip install matplotlib seaborn pandas", language="bash")
     st.stop()
 
 # App Title
@@ -76,5 +77,6 @@ if uploaded_file:
                 st.error("Boxplot requires numeric data for the Y-axis.")
         except Exception as e:
             st.error(f"Error creating boxplot: {e}")
+
 else:
     st.info("Please upload a dataset to begin.")
