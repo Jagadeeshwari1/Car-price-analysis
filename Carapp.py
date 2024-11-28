@@ -9,6 +9,7 @@ except ImportError as e:
     st.error(f"An import error occurred: {e}. Please ensure the required libraries are installed by running:")
     st.code("pip install matplotlib seaborn pandas", language="bash")
     st.stop()
+    pip install matplotlib seaborn pandas
 
 # App Title
 st.title("Visualization Dashboard")
@@ -80,3 +81,4 @@ if uploaded_file:
 
 else:
     st.info("Please upload a dataset to begin.")
+    
